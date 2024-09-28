@@ -6,7 +6,9 @@ const SearchBar = ({ countriesList, setFilteredCountries }) => {
       !searchValue && searchValue.trim() === ""
         ? countriesList
         : countriesList.filter((country) =>
-            country.name.official.toLowerCase().includes(searchValue.trim()),
+            country.name.official
+              .toLowerCase()
+              .includes(searchValue.trim().toLowerCase()),
           );
     setFilteredCountries(filteredCountries);
   };
